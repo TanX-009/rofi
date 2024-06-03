@@ -1,0 +1,111 @@
+/*****----- Configuration -----*****/
+configuration {
+	modi:                       "drun";
+    show-icons:                 true;
+    display-drun:               "";
+	drun-display-format:        "{name}";
+}
+
+/*****----- Theme -----*****/
+@import "../../.colors/rasi/colors.rasi"
+
+* {
+  font: "FantasqueSansM Nerd Font 10";
+
+
+  margin  : 0;
+  padding : 0;
+  spacing : 0;
+
+  background-color : transparent;
+  text-color       : @onSurface;
+}
+
+element-icon, element-text, scrollbar {
+  cursor: pointer;
+}
+
+window {
+  location : center;
+  width    : 700px;
+  height   : 590px;
+  y-offset : 0px;
+
+  border-radius    : 6px;
+  // for blur effect
+  background-color : @surfaceContainerLow;
+}
+
+mainbox {
+  padding : 24px;
+  spacing : 24px;
+}
+
+inputbar {
+  padding          : 8px;
+  spacing          : 4px;
+  children         : [ icon-search, entry ];
+  border           : 0 0 2px 0 solid;
+  border-radius    : 2px;
+  border-color     : @primary;
+  background-color : @surface;
+}
+
+icon-search, entry, element-icon, element-text {
+  vertical-align: 0.5;
+}
+
+icon-search {
+  expand   : false;
+  filename : "search-symbolic";
+  size     : 24px;
+}
+
+entry {
+  font              : "FantasqueSansM Nerd Font 12";
+  placeholder       : "Type here to search";
+  placeholder-color : @secondaryContainer;
+}
+
+textbox {
+  padding          : 4px 8px;
+  background-color : @surfaceContainerHigh;
+}
+
+listview {
+  columns       : 6;
+  spacing       : 8px;
+  fixed-height  : true;
+  fixed-columns : true;
+}
+
+element {
+  orientation   : vertical;
+  spacing       : 4px;
+  padding       : 8px;
+  border-radius : 2px;
+}
+element-icon {
+  size: 3.5em;
+}
+
+element-text {
+  text-color       : inherit;
+  horizontal-align : 0.5;
+}
+
+element normal urgent {
+  text-color: @secondary;
+}
+
+element normal active {
+  text-color: @primary;
+}
+
+element selected {
+  background-color: @surfaceContainerHighest;
+}
+
+element selected urgent {
+  background-color: @secondary;
+}
