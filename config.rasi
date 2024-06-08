@@ -7,7 +7,7 @@ configuration {
 }
 
 /*****----- Theme -----*****/
-@import "../../.colors/rasi/colors.rasi"
+@import "../../.colors/generated/rasi/colors.rasi"
 
 * {
   font: "FantasqueSansM Nerd Font 10";
