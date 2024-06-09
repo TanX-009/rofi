@@ -9,103 +9,161 @@ configuration {
 /*****----- Theme -----*****/
 @import "../../.colors/generated/rasi/colors.rasi"
 
+/*****----- Fonts -----*****/
 * {
   font: "FantasqueSansM Nerd Font 10";
-
-
-  margin  : 0;
-  padding : 0;
-  spacing : 0;
-
-  background-color : transparent;
-  text-color       : @onSurface;
 }
 
-element-icon, element-text, scrollbar {
-  cursor: pointer;
-}
 
+/*****----- Main Window -----*****/
 window {
-  location : center;
-  width    : 700px;
-  height   : 590px;
-  y-offset : 0px;
+    transparency:                "real";
+    location:                    center;
+    anchor:                      center;
+    fullscreen:                  true;
+    width:                       1366px;
+    height:                      768px;
+    x-offset:                    0px;
+    y-offset:                    0px;
 
-  border-radius    : 6px;
-  // for blur effect
-  background-color : @surfaceContainerLow;
+    enabled:                     true;
+    margin:                      0px;
+    padding:                     0px;
+    border:                      0px solid;
+    border-radius:               0px;
+    border-color:                @primary;
+    background-color:            black / 10%;
+    cursor:                      "default";
 }
 
+/*****----- Main Box -----*****/
 mainbox {
-  padding : 24px;
-  spacing : 24px;
+    enabled:                     true;
+    spacing:                     100px;
+    margin:                      0px;
+    padding:                     100px 225px;
+    border:                      0px solid;
+    border-radius:               0px 0px 0px 0px;
+    border-color:                @primary;
+    background-color:            transparent;
+    children:                    [ "inputbar", "listview" ];
 }
 
+/*****----- Inputbar -----*****/
 inputbar {
-  padding          : 8px;
-  spacing          : 4px;
-  children         : [ icon-search, entry ];
-  border           : 0 0 2px 0 solid;
-  border-radius    : 2px;
-  border-color     : @primary;
-  background-color : @surface;
+    enabled:                     true;
+    spacing:                     10px;
+    margin:                      0% 25%;
+    padding:                     18px;
+    border:                      0px solid;
+    border-radius:               10px;
+    border-color:                @primary;
+    background-color:            white / 5%;
+    text-color:                  @onSurface;
+    children:                    [ "prompt", "entry" ];
 }
 
-icon-search, entry, element-icon, element-text {
-  vertical-align: 0.5;
+prompt {
+    enabled:                     true;
+    background-color:            transparent;
+    text-color:                  inherit;
 }
-
-icon-search {
-  expand   : false;
-  filename : "search-symbolic";
-  size     : 24px;
+textbox-prompt-colon {
+    enabled:                     true;
+    expand:                      false;
+    str:                         "::";
+    background-color:            transparent;
+    text-color:                  inherit;
 }
-
 entry {
-  font              : "FantasqueSansM Nerd Font 12";
-  placeholder       : "Type here to search";
-  placeholder-color : @secondaryContainer;
+    enabled:                     true;
+    background-color:            transparent;
+    text-color:                  inherit;
+    cursor:                      text;
+    placeholder:                 "Search";
+    placeholder-color:           inherit;
 }
 
-textbox {
-  padding          : 4px 8px;
-  background-color : @surfaceContainerHigh;
-}
-
+/*****----- Listview -----*****/
 listview {
-  columns       : 6;
-  spacing       : 8px;
-  fixed-height  : true;
-  fixed-columns : true;
+    enabled:                     true;
+    columns:                     8;
+    lines:                       4;
+    cycle:                       true;
+    dynamic:                     true;
+    scrollbar:                   false;
+    layout:                      vertical;
+    reverse:                     false;
+    fixed-height:                true;
+    fixed-columns:               true;
+    
+    spacing:                     0px;
+    margin:                      0px;
+    padding:                     0px;
+    border:                      0px solid;
+    border-radius:               0px;
+    border-color:                @primary;
+    background-color:            transparent;
+    text-color:                  @onSurface;
+    cursor:                      "default";
+}
+scrollbar {
+    handle-width:                5px ;
+    handle-color:                @primary;
+    border-radius:               0px;
+    background-color:            @surfaceContainer;
 }
 
+/*****----- Elements -----*****/
 element {
-  orientation   : vertical;
-  spacing       : 4px;
-  padding       : 8px;
-  border-radius : 2px;
+    enabled:                     true;
+    spacing:                     15px;
+    margin:                      0px;
+    padding:                     35px 10px;
+    border:                      0px solid;
+    border-radius:               15px;
+    border-color:                @primary;
+    background-color:            transparent;
+    text-color:                  @onSurface;
+    orientation:                 vertical;
+    cursor:                      pointer;
+}
+element normal.normal {
+    background-color:            transparent;
+    text-color:                  @onSurface;
+}
+element selected.normal {
+    background-color:            white / 5%;
+    text-color:                  @onSurface;
 }
 element-icon {
-  size: 3.5em;
+    background-color:            transparent;
+    text-color:                  inherit;
+    size:                        72px;
+    cursor:                      inherit;
 }
-
 element-text {
-  text-color       : inherit;
-  horizontal-align : 0.5;
+    background-color:            transparent;
+    text-color:                  inherit;
+    highlight:                   inherit;
+    cursor:                      inherit;
+    vertical-align:              0.5;
+    horizontal-align:            0.5;
 }
 
-element normal urgent {
-  text-color: @secondary;
+/*****----- Message -----*****/
+error-message {
+    padding:                     100px;
+    border:                      0px solid;
+    border-radius:               0px;
+    border-color:                @primary;
+    background-color:            black / 10%;
+    text-color:                  @onSurface;
 }
-
-element normal active {
-  text-color: @primary;
-}
-
-element selected {
-  background-color: @surfaceContainerHighest;
-}
-
-element selected urgent {
-  background-color: @secondary;
+textbox {
+    background-color:            transparent;
+    text-color:                  @onSurface;
+    vertical-align:              0.5;
+    horizontal-align:            0.0;
+    highlight:                   none;
 }
