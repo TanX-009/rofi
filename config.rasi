@@ -2,7 +2,7 @@
 configuration {
 	modi:                       "drun";
     show-icons:                 true;
-    display-drun:               "";
+    display-drun:               " ";
 	drun-display-format:        "{name}";
 }
 
@@ -11,7 +11,7 @@ configuration {
 
 /*****----- Fonts -----*****/
 * {
-  font: "FantasqueSansM Nerd Font 10";
+  font: "FantasqueSansM Nerd Font 14";
 }
 
 
@@ -21,8 +21,8 @@ window {
     location:                    center;
     anchor:                      center;
     fullscreen:                  true;
-    width:                       1366px;
-    height:                      768px;
+    width:                       1920px;
+    height:                      1080px;
     x-offset:                    0px;
     y-offset:                    0px;
 
