@@ -59,7 +59,7 @@ inputbar {
     border-radius:               10px;
     border-color:                @primary;
     background-color:            white / 5%;
-    text-color:                  @onSurface;
+    text-color:                  #ffffff;
     children:                    [ "prompt", "entry" ];
 }
 
@@ -104,7 +104,7 @@ listview {
     border-radius:               0px;
     border-color:                @primary;
     background-color:            transparent;
-    text-color:                  @onSurface;
+    text-color:                  #ffffff;
     cursor:                      "default";
 }
 scrollbar {
@@ -124,17 +124,17 @@ element {
     border-radius:               15px;
     border-color:                @primary;
     background-color:            transparent;
-    text-color:                  @onSurface;
+    text-color:                  #ffffff;
     orientation:                 vertical;
     cursor:                      pointer;
 }
 element normal.normal {
     background-color:            transparent;
-    text-color:                  @onSurface;
+    text-color:                  #ffffff;
 }
 element selected.normal {
     background-color:            white / 5%;
-    text-color:                  @onSurface;
+    text-color:                  #ffffff;
 }
 element-icon {
     background-color:            transparent;
@@ -158,11 +158,11 @@ error-message {
     border-radius:               0px;
     border-color:                @primary;
     background-color:            black / 10%;
-    text-color:                  @onSurface;
+    text-color:                  #ffffff;
 }
 textbox {
     background-color:            transparent;
-    text-color:                  @onSurface;
+    text-color:                  #ffffff;
     vertical-align:              0.5;
     horizontal-align:            0.0;
     highlight:                   none;
